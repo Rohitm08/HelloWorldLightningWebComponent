@@ -1,0 +1,18 @@
+<template>
+    <lightning-input type="checkbox" label="Show Div" onchange={showDivHandler}></lightning-input>
+    <template if:true={displayDiv}>  
+    <div>I am here</div>
+    </template>
+
+    <template for:each={cityList} for:item="city">
+        <p key={city}>{city}</p> <!--Always make sure assign a unique value within the key attribute
+        as this is being used by framework to uniquely identify an element -->
+    </template>
+
+    <h1>Below is an example of iterator directive</h1>
+    <!--Iterator can be very useful if we want to apply special rendering on our elements dynamically
+    based on their index. It has useful properties like it.first, it.last, it.index-->
+    <template iterator:it={cityList}>
+        <p key={it.value}>{it.value}</p>
+    </template>
+</template>
