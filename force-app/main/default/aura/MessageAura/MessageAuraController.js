@@ -1,6 +1,6 @@
 ({
     sendHandler: function(component, event, helper) {
-      const inputElement = component.find("inputBox");
+      let inputElement = component.find("inputBox");
       if (inputElement) {
         const msg = inputElement.get("v.value");
         const messages = component.get("v.messages");
